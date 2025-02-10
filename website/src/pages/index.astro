@@ -1,78 +1,96 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HorizontalCard from "../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
-
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+import { Image } from "astro:assets";
+import index1 from "../assets/index1.jpeg";
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
+  <article class="prose prose-img:mx-auto lg:prose-2xl">
+    <h1>Kaiping Chen</h1>
+    <h3>Associate Professor, UW-Madison</h3>
+    <div class="flex flex-col md:flex-row">
+      <Image src={index1} height="500" alt="Picture of Kaiping Chen" />
+      <p class="grow text-center">
+        <b>Keywords of Research Interest</b>
+        <br />
+        Science & Technology Communication
+        <br />
+        Public Deliberation
+        <br />
+        Computational Social Science
+      </p>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
-    </div>
-  </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
-  </div>
-
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+    <p>
+      Welcome to my professional space. I am an Associate Professor in
+      Computational Communication at the University of Wisconsin-Madison,
+      working in the <a href="https://lsc.wisc.edu" target="_blank"
+        >Department of Life Sciences Communication</a
+      >. I also maintain active affiliations with several departments and
+      institutes-—including Political Science, the Data Science Institute, the
+      Robert & Jean Holtz Center for Science and Technology Studies, and many
+      others—-which enrich my interdisciplinary approach to research and
+      teaching. I serve in leadership roles within professional associations,
+      such as the International Liaison at the Computational Methods Division of
+      the International Communication Association (ICA) and as the Professional
+      Responsibility and Freedom Chair of the Communicating Science, Health,
+      Environment and Risk Division at Association for Education in Journalism
+      and Mass Communication (AEJMC). I was recognized as the <a
+        href="https://ecals.cals.wisc.edu/wp-content/uploads/sites/358/2023/07/2023-LLK-Center-Early-Career-Scholar-Award-v6-29-2355.pdf"
+        target="_blank"
+        >Lillian Lodge Kopenhaver Early Career Woman Scholar Award</a
+      > by the flagship association (AEJMC) in my discipline and as one of the most
+      influential Asian leaders in Wisconsin.
+    </p>
+    <p>
+      My research is driven by a fundamental curiosity about how we can empower
+      citizens to engage in thoughtful deliberation on science and political
+      issues, and how effective communication processes can bridge different
+      social groups in policymaking. By harnessing computational and qualitative
+      methods, I explore how digital media influences political accountability
+      and public dialogue across different national contexts—from the United
+      States to China and Ghana. This interdisciplinary work, drawing on
+      theories from communication, political science, and computer science,
+      unpacks both the potential of digital platforms to amplify citizen voices
+      and the challenges posed by information overload, identity politics, and
+      misinformation. My work was published in flagship journals across
+      disciplines, including the <em>American Political Science Review</em>, <em
+      >
+        Journal of Communication
+      </em>, <em>Public Opinion Quarterly</em>, and the <em>
+        Proceedings of the National Academy of Sciences (PNAS)
+      </em>.
+    </p>
+    <p>
+      Beyond advancing theoretical insights, I am deeply committed to
+      translating research into real-world impact. My methodological
+      contributions integrate qualitative and computational analyses to examine
+      text, visuals, and social media data, enriching our understanding of
+      public discourse and digital misinformation. As a civic engagement
+      practitioner, I collaborate with local governments and communities in the
+      U.S. and China to pilot innovative public engagement strategies, ensuring
+      that scholarly work informs practical solutions for everyday challenges.
+      My practices were covered by local media such as <a
+        href="https://www.paloaltoonline.com/morguepdf/2015/2015_07_17.paw.section1.pdf"
+        target="_blank">Palo Alto Weekly</a
+      > in California and the <a
+        href="https://daneclimateaction.org/OECC-Blog/Environmental-Justice-Conversations"
+        target="_blank"
+      >
+        Dane County Office of Energy and Climate Change Blog</a
+      >
+      in Wisconsin. With a from <a
+        href="https://comm.stanford.edu"
+        target="_blank">Ph.D. in Communication</a
+      >
+      Stanford University, an <a
+        href="https://www.sipa.columbia.edu"
+        target="_blank">MPA</a
+      > from Columbia University, and strong support from funding agencies such as
+      the National Science Foundation, National Institutes of Health, the Chan Zuckerberg
+      Initiative and American Family Insurance, I remain dedicated to turning academic
+      insights into transformative community practices to bridge the gaps between
+      science and technology policymaking and public values.
+    </p>
+  </article>
 </BaseLayout>
+<!-- <div class="text-3xl w-full font-bold mb-2">News</div> -->

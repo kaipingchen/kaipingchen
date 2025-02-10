@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import piano1 from "../assets/piano1.jpeg";
+import piano2 from "../assets/piano2.jpeg";
+import piano3 from "../assets/piano3.jpg";
+import piano4 from "../assets/piano4.png";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout sideBarActiveItemID="piano">
+    <article class="prose prose-img:mx-auto lg:prose-2xl">
+        <h1>Piano: A Lifelong Passion</h1>
+        <p>
+            Music has been a profound part of my life since I started playing
+            piano at the age of three. Performing has taught me courage,
+            adaptability, and resilience, whether on stage or in competitions.
+            As a teenager, playing in a band showed me that music is not just
+            about self-expression but also about listening and
+            collaboration—lessons that extend to my academic work.
+        </p><p>
+            Much like deliberation, music fosters connection and engagement
+            across differences. It requires deep listening, responsiveness, and
+            shared understanding—skills that parallel effective communication.
+            My experiences in piano performance and competitions have shaped how
+            I approach challenges with a growth mindset and an openness to new
+            perspectives.
+        </p><p>
+            Recently, I have been exploring how music intersects with science
+            and technology communication to create immersive experiences.
+            Inspired by projects like Stanford CCRMA and the Princeton Laptop
+            Orchestra, I am interested in how emerging technologies shape
+            musical expression and engagement, offering new ways to connect with
+            audiences.
+        </p>
+        <p>
+            As I continue to explore this space, I look forward to sharing
+            performances and interdisciplinary projects. Stay tuned for updates
+            on upcoming work!
+        </p>
+
+        <figure class="text-center">
+            <Image src={piano1} alt="piano1" />
+            <figcaption>Toyooka, Japan, age 8.</figcaption>
+        </figure>
+        <figure class="text-center">
+            <Image src={piano2} alt="piano2" />
+            <figcaption>
+                "Un Sospiro", Franz Liszt, Shanghai Concert Hall, age 10
+            </figcaption>
+        </figure>
+        <figure class="text-center center">
+            <Image src={piano3} alt="piano3" class="center" />
+            <figcaption>Christchurch, New Zealand, 2016.</figcaption>
+        </figure>
+        <figure class="text-center">
+            <Image src={piano4} alt="piano4" class="center" />
+            <figcaption>
+                Vienna, Austria, 2019 (raising fund for refugees).
+            </figcaption>
+        </figure>
+    </article>
+</BaseLayout>
