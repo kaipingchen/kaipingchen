@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kaipingchen.github.io/kaipingchen/sitemap-index.xml
+Sitemap: https://kaipingchen.com/sitemap-index.xml
